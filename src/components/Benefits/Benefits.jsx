@@ -35,32 +35,56 @@ const Benefits = () => {
       <Box
         sx={{
           color: "#fff",
-          padding: { lg: "100px 120px", xs: "20px 20px " },
+          padding: { lg: "0px 120px 0px 120px", xs: "20px 20px " },
+          backgroundImage: `
+          linear-gradient(
+            to bottom,
+            rgba(15, 16, 17, 1),
+            rgba(15, 16, 17, 0.5),
+            rgba(15, 16, 17, 0.9),
+            rgba(15, 16, 17, 1)
+          ),
+          url('src/assets/benefit-bg.png')
+        `,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          overflow: "hidden",
         }}
       >
         <Box
           sx={{
             backgroundColor: { xs: "#1F2122", sm: "transparent" },
-            borderRadius: "20px",
-            // padding: "20px",
+            borderRadius: "16px",
+            padding: "20px",
           }}
         >
           <Typography
-            sx={{ fontSize: { lg: "42px", xs: "32px" }, fontWeight: 700 }}
+            sx={{
+              fontSize: { lg: "42px", xs: "32px" },
+              fontWeight: 700,
+              padding: "20px 20px 0px 20px",
+            }}
           >
             Benefits
           </Typography>
-          <Grid container spacing={2} sx={{ padding: "20px 0px 0px 0px" }}>
+          <Grid
+            container
+            columns={15}
+            spacing={2}
+            sx={{
+              padding: "16px 0px 0px 0px",
+            }}
+          >
             {items.map((item, index) => (
               <Grid
                 item
                 key={index}
-                xs={index === items.length - 1 ? 12 : 6}
+                xs={index === items.length - 1 ? 15 : 7.5}
                 sm={3}
               >
                 <Box
                   sx={{
-                    backgroundColor: "#000",
+                    backgroundColor: "rgba(15, 16, 17, 1)",
                     borderRadius: "20px",
                     padding: {
                       lg: "24px 24px 51px 24px",
