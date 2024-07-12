@@ -1,29 +1,34 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
+import benefit1 from "../../assets/benefits-1.svg";
+import benefit2 from "../../assets/benefits-2.svg";
+import benefit3 from "../../assets/benefits-3.svg";
+import benefit4 from "../../assets/benefits-4.svg";
+import benefit5 from "../../assets/benefits-5.svg";
 
 const items = [
   {
-    imgUrl: "src/assets/benefits-1.svg",
+    imgUrl: benefit1,
     title: "Free Upgrades and Updates",
     desc: "Free upgrades and updates to keep your system current.",
   },
   {
-    imgUrl: "src/assets/benefits-2.svg",
+    imgUrl: benefit2,
     title: "Scalable and Flexible Software Suite",
     desc: "Implement seamless point-of-sale systems.",
   },
   {
-    imgUrl: "src/assets/benefits-3.svg",
+    imgUrl: benefit3,
     title: "No Vendor / Data Lock-in",
     desc: "Scalable and flexible software suite for dynamic business needs",
   },
   {
-    imgUrl: "src/assets/benefits-4.svg",
+    imgUrl: benefit4,
     title: "24*7 Support",
     desc: "24/7 support for secured, risk-free, and compliant solutions ensuring safety.",
   },
   {
-    imgUrl: "src/assets/benefits-5.svg",
+    imgUrl: benefit5,
     title: "Secured, Risk-free and Compliant",
     desc: "Solutions ensuring safety and regulatory adherence.",
   },

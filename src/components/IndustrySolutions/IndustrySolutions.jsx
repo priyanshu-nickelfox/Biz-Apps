@@ -1,49 +1,61 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 
+import industry1 from "../../assets/industry-1.svg";
+import industry2 from "../../assets/industry-2.svg";
+import industry3 from "../../assets/industry-3.svg";
+import industry4 from "../../assets/industry-4.svg";
+import industry5 from "../../assets/industry-5.svg";
+import industry6 from "../../assets/industry-6.svg";
+import industry7 from "../../assets/industry-7.svg";
+import industry8 from "../../assets/industry-8.svg";
+import industry9 from "../../assets/industry-9.svg";
+import industry10 from "../../assets/industry-10.svg";
+import industry11 from "../../assets/industry-11.svg";
+
 const items = [
   {
-    imgUrl: "src/assets/industry-1.svg",
+    imgUrl: industry1,
     title: "Automotive",
   },
   {
-    imgUrl: "src/assets/industry-2.svg",
+    imgUrl: industry2,
     title: "Education",
   },
   {
-    imgUrl: "src/assets/industry-3.svg",
+    imgUrl: industry3,
     title: "Federal Government",
   },
   {
-    imgUrl: "src/assets/industry-4.svg",
+    imgUrl: industry4,
     title: "Financial Services",
   },
   {
-    imgUrl: "src/assets/industry-5.svg",
+    imgUrl: industry5,
     title: "Healthcare",
   },
   {
-    imgUrl: "src/assets/industry-6.svg",
+    imgUrl: industry6,
     title: "Legal",
   },
   {
-    imgUrl: "src/assets/industry-7.svg",
+    imgUrl: industry7,
     title: "Manufacturing",
   },
   {
-    imgUrl: "src/assets/industry-8.svg",
+    imgUrl: industry8,
     title: "Media & Entertainment",
   },
   {
-    imgUrl: "src/assets/industry-9.svg",
+    imgUrl: industry9,
     title: "Retail",
   },
   {
-    imgUrl: "src/assets/industry-10.svg",
+    imgUrl: industry10,
     title: "Service Providers",
   },
   {
-    imgUrl: "src/assets/industry-11.svg",
+    imgUrl: industry11,
     title: "State & Local Government",
   },
 ];

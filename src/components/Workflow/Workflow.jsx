@@ -9,10 +9,16 @@ import {
 import React, { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import workflow1 from "../../assets/workflow-1.svg";
+import workflow2 from "../../assets/workflow-2.svg";
+import workflow3 from "../../assets/workflow-3.svg";
+import workflow4 from "../../assets/workflow-4.svg";
+import workflow5 from "../../assets/workflow-5.svg";
+import comp2 from "../../assets/offer-2.png";
 
 const items = [
   {
-    icon: "src/assets/workflow-1.svg",
+    icon: workflow1,
     title: "Financial Management",
     desc: [
       {
@@ -43,7 +49,7 @@ const items = [
     ],
   },
   {
-    icon: "src/assets/workflow-2.svg",
+    icon: workflow2,
     title: "Human Resource Management",
     desc: [
       {
@@ -74,7 +80,7 @@ const items = [
     ],
   },
   {
-    icon: "src/assets/workflow-3.svg",
+    icon: workflow3,
     title: "Supply Chain Management",
     desc: [
       {
@@ -110,7 +116,7 @@ const items = [
     ],
   },
   {
-    icon: "src/assets/workflow-4.svg",
+    icon: workflow4,
     title: "Business Intelligence (BI) and Analytics",
     desc: [
       {
@@ -136,7 +142,7 @@ const items = [
     ],
   },
   {
-    icon: "src/assets/workflow-5.svg",
+    icon: workflow5,
     title: "Customer Relationship Management (CRM)",
     desc: [
       {
@@ -392,7 +398,7 @@ const Workflow = () => {
                       height: "auto",
                       width: GetWidth(),
                     }}
-                    src="src/assets/offer-2.png"
+                    src={comp2}
                     alt="description"
                   />
                 </Box>

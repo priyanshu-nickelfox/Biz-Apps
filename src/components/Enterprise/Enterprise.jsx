@@ -9,25 +9,30 @@ import {
 import React, { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import enterprise1 from "../../assets/enterprise-1.svg";
+import enterprise2 from "../../assets/enterprise-2.svg";
+import enterprise3 from "../../assets/enterprise-3.svg";
+import enterprise4 from "../../assets/enterprise-4.svg";
+import comp4 from "../../assets/offer-4.png";
 
 const items = [
   {
-    icon: "src/assets/enterprise-1.svg",
+    icon: enterprise1,
     title: "Network Management",
     desc: "VPN, Firewalls, Network, Firewall",
   },
   {
-    icon: "src/assets/enterprise-2.svg",
+    icon: enterprise2,
     title: "Asset Management",
     desc: "",
   },
   {
-    icon: "src/assets/enterprise-3.svg",
+    icon: enterprise3,
     title: "Facility Management",
     desc: "",
   },
   {
-    icon: "src/assets/enterprise-4.svg",
+    icon: enterprise4,
     title: "Security Management",
     desc: [
       {
@@ -269,7 +274,7 @@ const Enterprise = () => {
                       height: "auto",
                       width: GetWidth(),
                     }}
-                    src="src/assets/offer-4.png"
+                    src={comp4}
                     alt="description"
                   />
                 </Box>

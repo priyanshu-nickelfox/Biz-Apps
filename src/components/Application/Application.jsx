@@ -1,21 +1,26 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 
+import application1 from "../../assets/application-1.svg";
+import application2 from "../../assets/application-2.svg";
+import application3 from "../../assets/application-3.svg";
+import application4 from "../../assets/application-4.svg";
+
 const items = [
   {
-    imgUrl: "src/assets/application-1.svg",
+    imgUrl: application1,
     title: "AI / ML",
   },
   {
-    imgUrl: "src/assets/application-2.svg",
+    imgUrl: application2,
     title: "Big Data & Analytics",
   },
   {
-    imgUrl: "src/assets/application-3.svg",
+    imgUrl: application3,
     title: "SAP",
   },
   {
-    imgUrl: "src/assets/application-4.svg",
+    imgUrl: application4,
     title: "Splunk",
   },
 ];

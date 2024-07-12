@@ -9,10 +9,13 @@ import {
 import React, { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import collab1 from "../../assets/collab-1.svg";
+import collab2 from "../../assets/collab-2.svg";
+import comp3 from "../../assets/offer-3.png";
 
 const items = [
   {
-    icon: "src/assets/collab-1.svg",
+    icon: collab1,
     title: "Content Management",
     desc: [
       {
@@ -38,7 +41,7 @@ const items = [
     ],
   },
   {
-    icon: "src/assets/collab-2.svg",
+    icon: collab2,
     title: "Collaboration and Communication",
     desc: [
       {
@@ -151,7 +154,7 @@ const Collaboration = () => {
                       height: "auto",
                       width: GetWidth(),
                     }}
-                    src="src/assets/offer-3.png"
+                    src={comp3}
                     alt="description"
                   />
                 </Box>

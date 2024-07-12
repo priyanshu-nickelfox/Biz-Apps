@@ -1,21 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Box, Typography, Button } from "@mui/material";
+import hero1 from "../../assets/hero-1.svg";
+import hero2 from "../../assets/hero-2.svg";
+import hero3 from "../../assets/hero-3.svg";
+import hero4 from "../../assets/hero-4.svg";
+import animation from "../../assets/animation.mp4";
 
 const items = [
   {
-    imgUrl: "src/assets/hero-1.svg",
+    imgUrl: hero1,
     title: "Integrated",
   },
   {
-    imgUrl: "src/assets/hero-2.svg",
+    imgUrl: hero2,
     title: "Automated",
   },
   {
-    imgUrl: "src/assets/hero-3.svg",
+    imgUrl: hero3,
     title: "Secured",
   },
   {
-    imgUrl: "src/assets/hero-4.svg",
+    imgUrl: hero4,
     title: "Scalable",
   },
 ];
@@ -72,9 +77,9 @@ function Hero() {
                   backgroundClip: "text",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  lineHeight: { lg: "83.33px", xs: "52px" },
+                  lineHeight: { lg: "83.33px", xs: "52.08px" },
                   textAlign: { lg: "left", xs: "left" },
-                  letterSpacing: "-1%",
+                  // letterSpacing: "-1%",
                 }}
               >
                 Customize Business Workflows with Unified Software Suite
@@ -96,11 +101,11 @@ function Hero() {
                       <img src={item.imgUrl} />
                       <Typography
                         sx={{
-                          paddingLeft: "20px",
+                          paddingLeft: "12px",
                           color: "rgba(193, 193, 201, 1)",
                           fontSize: "24px",
                           fontWeight: 400,
-                          lineHeight: "24px",
+                          lineHeight: "36px",
                         }}
                       >
                         {item.title}
@@ -124,6 +129,7 @@ function Hero() {
                     backgroundColor: "#fff",
                     color: "#000",
                   },
+                  lineHeight: '24px',
                 }}
               >
                 Get Started
@@ -142,7 +148,7 @@ function Hero() {
             }}
           >
             <video
-              src="src/assets/animation.mp4"
+              src={animation}
               autoPlay
               loop
               muted

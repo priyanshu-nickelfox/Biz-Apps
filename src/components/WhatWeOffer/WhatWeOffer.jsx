@@ -9,40 +9,48 @@ import {
 import React, { useEffect, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import offer1 from "../../assets/OfferComp-1/offer-personal-1.svg";
+import offer2 from "../../assets/OfferComp-1/offer-personal-2.svg";
+import offer3 from "../../assets/OfferComp-1/offer-personal-3.svg";
+import offer4 from "../../assets/OfferComp-1/offer-personal-4.svg";
+import offer5 from "../../assets/OfferComp-1/offer-personal-5.svg";
+import offer6 from "../../assets/OfferComp-1/offer-personal-6.svg";
+import offer7 from "../../assets/OfferComp-1/offer-personal-7.svg";
+import comp1 from "../../assets/offer-1.png";
 
 const items = [
   {
-    icon: "src/assets/OfferComp-1/offer-personal-1.svg",
+    icon: offer1,
     title: "Task Management/ Project Management",
     desc: "Enterprise Data Warehousing: Scalable storage solutions. Data Management: Lifecycle management for data integrity. Data Center Consolidation: Efficient and secure hosting. Secure Data Transmission: Advanced protocols for safety. Real-Time Data Processing: Rapid capture and processing. Video Analytics: Advanced engineering for security. Workflow Software: Integration for streamlined workflows.",
   },
   {
-    icon: "src/assets/OfferComp-1/offer-personal-2.svg",
+    icon: offer2,
     title: "Calendar and Scheduling",
     desc: "Never miss an important date or deadline again with our smart calendar tool, keeping you on top of your commitments.",
   },
   {
-    icon: "src/assets/OfferComp-1/offer-personal-3.svg",
+    icon: offer3,
     title: "eDocument Management and eSignature",
     desc: "Custom Servers: Specialized for data and networking. Managed Hybrid Cloud: Flexible management solutions. Unified Software Stack: Custom stack for operations. Backend Operations: Efficient HR, finance, legal, and accounting management.",
   },
   {
-    icon: "src/assets/OfferComp-1/offer-personal-4.svg",
+    icon: offer4,
     title: "Communication and Collaboration",
     desc: "Machine Learning Models: Frameworks like TensorFlow. Task Automation: Automated processes for efficiency. Cognitive Decision Making: AI-driven insights for decisions.",
   },
   {
-    icon: "src/assets/OfferComp-1/offer-personal-5.svg",
+    icon: offer5,
     title: "Automation",
     desc: "Machine Learning Models: Frameworks like TensorFlow. Task Automation: Automated processes for efficiency. Cognitive Decision Making: AI-driven insights for decisions.",
   },
   {
-    icon: "src/assets/OfferComp-1/offer-personal-6.svg",
+    icon: offer6,
     title: "Note making and Knowledge Management",
     desc: "Machine Learning Models: Frameworks like TensorFlow. Task Automation: Automated processes for efficiency. Cognitive Decision Making: AI-driven insights for decisions.",
   },
   {
-    icon: "src/assets/OfferComp-1/offer-personal-7.svg",
+    icon: offer7,
     title: "Password Management",
     desc: "Machine Learning Models: Frameworks like TensorFlow. Task Automation: Automated processes for efficiency. Cognitive Decision Making: AI-driven insights for decisions.",
   },
@@ -117,7 +125,7 @@ const WhatWeOffer = () => {
         >
           <Grid
             container
-            justifyContent="space-between"
+            justifyContent="center"
             sx={{
               backgroundColor: "#0F1011",
               padding: { lg: "40px 0px 0px 0px", xs: "0px" },
@@ -140,7 +148,7 @@ const WhatWeOffer = () => {
                       height: "auto",
                       width: GetWidth(),
                     }}
-                    src="src/assets/offer-1.png"
+                    src={comp1}
                     alt="description"
                   />
                 </Box>
