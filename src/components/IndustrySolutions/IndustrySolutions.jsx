@@ -12,6 +12,7 @@ import industry8 from "../../assets/industry-8.svg";
 import industry9 from "../../assets/industry-9.svg";
 import industry10 from "../../assets/industry-10.svg";
 import industry11 from "../../assets/industry-11.svg";
+import gridBackground from '../../assets/grid-background.png'
 
 const items = [
   {
@@ -117,7 +118,7 @@ const IndustrySolutions = () => {
                       bottom: 0,
                       background: `
                   linear-gradient(to bottom right, rgba(15, 16, 17, 1), rgba(255, 255, 255, 0.8)),
-                  url("src/assets/grid-background.png")
+                  url(${gridBackground})
                 `,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
