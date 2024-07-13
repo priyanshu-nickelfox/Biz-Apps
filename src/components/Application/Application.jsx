@@ -5,6 +5,7 @@ import application1 from "../../assets/application-1.svg";
 import application2 from "../../assets/application-2.svg";
 import application3 from "../../assets/application-3.svg";
 import application4 from "../../assets/application-4.svg";
+import backgroundImg from '../../assets/background.jpeg'
 
 const items = [
   {
@@ -51,7 +52,7 @@ const Application = () => {
           rgba(15, 16, 17, 0),
           rgba(15, 16, 17, 1)
         ),
-        url('src/assets/background.jpeg')
+        url(${backgroundImg})
       `,
             backgroundSize: "cover",
             backgroundPosition: "center",
