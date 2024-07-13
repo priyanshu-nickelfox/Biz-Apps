@@ -13,6 +13,8 @@ import collab1 from "../../assets/collab-1.svg";
 import collab2 from "../../assets/collab-2.svg";
 import comp3 from "../../assets/offer-3.png";
 
+
+
 const items = [
   {
     icon: collab1,
@@ -90,6 +92,23 @@ const GetWidth = () => {
   return width < 780 ? 329 : 379;
 };
 
+const iconWidth = () => {
+  const [iconWidth, setIconWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIconWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return iconWidth < 780 ? 20 : 32;
+};
+
 const Collaboration = () => {
   const [expandedPanel, setExpandedPanel] = useState(null);
 
@@ -131,7 +150,6 @@ const Collaboration = () => {
           <Grid
             container
             justifyContent="center"
-            // alignItems="center"
             sx={{
               backgroundColor: "#0F1011",
               padding: { lg: "40px 0px 0px 0px", xs: "0px" },
@@ -164,7 +182,6 @@ const Collaboration = () => {
               item
               md={6}
               sx={{
-                // backgroundColor: "#0F1011",
                 borderRadius: "20px",
               }}
             >
@@ -215,7 +232,8 @@ const Collaboration = () => {
                       <img
                         src={item.icon}
                         alt={item.title}
-                        style={{ marginRight: "16px" }}
+                        style={{ marginRight: "16px",width:iconWidth() }}
+                        
                       />
                       <Typography
                         sx={{
@@ -244,6 +262,7 @@ const Collaboration = () => {
                                     fontSize: { lg: "18px", xs: "12.02px" },
                                     fontWeight: 700,
                                     lineHeight: { lg: "27px", xs: "18.03px" },
+                                    // paddingTop: '16px'
                                   }}
                                 >
                                   {i.descTitle}
@@ -254,7 +273,7 @@ const Collaboration = () => {
                                   fontSize: "14px",
                                   fontWeight: 400,
                                   lineHeight: "21px",
-                                  paddingTop: "4px",
+                                  padding: "4px 0px 16px 0px ",
                                 }}
                               >
                                 {i.description}

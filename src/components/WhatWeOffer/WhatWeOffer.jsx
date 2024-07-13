@@ -22,7 +22,7 @@ const items = [
   {
     icon: offer1,
     title: "Task Management/ Project Management",
-    desc: "Enterprise Data Warehousing: Scalable storage solutions. Data Management: Lifecycle management for data integrity. Data Center Consolidation: Efficient and secure hosting. Secure Data Transmission: Advanced protocols for safety. Real-Time Data Processing: Rapid capture and processing. Video Analytics: Advanced engineering for security. Workflow Software: Integration for streamlined workflows.",
+    desc: "Stay on top of your tasks and projects with our intuitive tools, ensuring nothing falls through the cracks.",
   },
   {
     icon: offer2,
@@ -32,27 +32,27 @@ const items = [
   {
     icon: offer3,
     title: "eDocument Management and eSignature",
-    desc: "Custom Servers: Specialized for data and networking. Managed Hybrid Cloud: Flexible management solutions. Unified Software Stack: Custom stack for operations. Backend Operations: Efficient HR, finance, legal, and accounting management.",
+    desc: "Go paperless with our eDocument management app, organizing and signing documents digitally for maximum efficiency.",
   },
   {
     icon: offer4,
     title: "Communication and Collaboration",
-    desc: "Machine Learning Models: Frameworks like TensorFlow. Task Automation: Automated processes for efficiency. Cognitive Decision Making: AI-driven insights for decisions.",
+    desc: "Stay connected with your team wherever you are with our communication and collaboration app, ensuring smooth teamwork and project success.",
   },
   {
     icon: offer5,
     title: "Automation",
-    desc: "Machine Learning Models: Frameworks like TensorFlow. Task Automation: Automated processes for efficiency. Cognitive Decision Making: AI-driven insights for decisions.",
+    desc: "Automate repetitive tasks and steamline your workflow with our automation tools, freeing up time for more important work.",
   },
   {
     icon: offer6,
     title: "Note making and Knowledge Management",
-    desc: "Machine Learning Models: Frameworks like TensorFlow. Task Automation: Automated processes for efficiency. Cognitive Decision Making: AI-driven insights for decisions.",
+    desc: "Capture ideas and insights with our note-making app, organizing your thoughts and knowledge for easy access.",
   },
   {
     icon: offer7,
     title: "Password Management",
-    desc: "Machine Learning Models: Frameworks like TensorFlow. Task Automation: Automated processes for efficiency. Cognitive Decision Making: AI-driven insights for decisions.",
+    desc: "Never forget a password again with our password management solution, securely storing and autofilling your credentials.",
   },
 ];
 
@@ -71,6 +71,23 @@ const GetWidth = () => {
   }, []);
 
   return width < 780 ? 212 : 379;
+};
+
+const iconWidth = () => {
+  const [iconWidth, setIconWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIconWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return iconWidth < 780 ? 20 : 32;
 };
 
 const WhatWeOffer = () => {
@@ -182,6 +199,7 @@ const WhatWeOffer = () => {
                     }}
                   >
                     <AccordionSummary
+                      disableSpacing
                       expandIcon={
                         expandedPanel === `panel-${index}` ? (
                           <RemoveIcon sx={{ color: "white" }} />
@@ -197,16 +215,17 @@ const WhatWeOffer = () => {
                             ? "rgba(33, 34, 36, 1)"
                             : "#0F1011",
                         color: "rgba(193, 193, 201, 1)",
-                        padding: "20px 20px 8px 20px",
+                        padding: "20px 20px 20px 20px",
                         borderRadius: "20px",
                         display: "flex",
                         alignItems: "center",
+                        marginTop: { lg: "16px", xs: "1Zpx" },
                       }}
                     >
                       <img
                         src={item.icon}
                         alt={item.title}
-                        style={{ marginRight: "16px" }}
+                        style={{ marginRight: "16px", width: iconWidth() }}
                       />
                       <Typography
                         sx={{
@@ -218,18 +237,19 @@ const WhatWeOffer = () => {
                       </Typography>
                     </AccordionSummary>
                     <AccordionDetails
+                      disableSpacing
                       sx={{
                         backgroundColor: "rgba(33, 34, 36, 1)",
                         color: "rgba(193, 193, 201, 1)",
                         borderRadius: "16px",
-                        padding: "0px 0px 0px 48px",
+                        padding: "0px 0px 0px 50px",
                       }}
                     >
                       <Box
                         sx={{
                           padding: {
                             lg: "0px 20px 20px 20px",
-                            xs: "0px 12px 12px 12px",
+                            xs: "0px 16px 12px 12px",
                           },
                         }}
                       >

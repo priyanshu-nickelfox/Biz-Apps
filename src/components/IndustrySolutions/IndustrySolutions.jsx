@@ -56,7 +56,7 @@ const items = [
   },
   {
     imgUrl: industry11,
-    title: "State & Local Government",
+    title: "State & Local<br>Government",
   },
 ];
 
@@ -116,15 +116,16 @@ const IndustrySolutions = () => {
                       right: 0,
                       bottom: 0,
                       background: `
-                  linear-gradient(to bottom right, rgba(15, 16, 17, 1), rgba(255, 255, 255, 0.9)),
+                  linear-gradient(to bottom right, rgba(15, 16, 17, 1), rgba(255, 255, 255, 0.8)),
                   url("src/assets/grid-background.png")
                 `,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       backgroundBlendMode: "overlay",
-                      borderRadius: "8px",
+                      borderRadius: "16px",
                       opacity: 0.2,
                       zIndex: 1,
+                      height: {lg:'154px',xs:'120px'}
                     }}
                   />
                   <Box
@@ -135,19 +136,20 @@ const IndustrySolutions = () => {
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "space-between",
+                      padding: {lg:'16px',xs:'0px 6px 0px 6px'}
                     }}
                   >
-                    <img src={item.imgUrl} alt={item.title} />
+                    <img src={item.imgUrl} alt={item.title} style={{marginBottom: '10px'}} />
                     <Typography
+                    dangerouslySetInnerHTML={{ __html: item.title }}
                       sx={{
-                        paddingTop: "12px",
+                        // paddingTop: "6px",
                         color: "rgba(244, 244, 247, 1)",
                         fontSize: { lg: "18px", xs: "15px" },
                         textAlign: "center",
                       }}
-                    >
-                      {item.title}
-                    </Typography>
+                    />
+                    
                   </Box>
                 </Box>
               </Grid>

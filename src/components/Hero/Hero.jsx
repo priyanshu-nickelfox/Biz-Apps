@@ -70,7 +70,7 @@ function Hero() {
               <Typography
                 variant="h2"
                 sx={{
-                  fontSize: { lg: "64px", xs: "40px" },
+                  fontSize: { lg: "64px", xs: "39px" },
                   fontWeight: 700,
                   backgroundImage:
                     "linear-gradient(to bottom, rgba(244, 246, 253, 1), rgba(123, 124, 128, 1))",
@@ -79,23 +79,30 @@ function Hero() {
                   WebkitTextFillColor: "transparent",
                   lineHeight: { lg: "83.33px", xs: "52.08px" },
                   textAlign: { lg: "left", xs: "left" },
-                  // letterSpacing: "-1%",
                 }}
               >
                 Customize Business Workflows with Unified Software Suite
               </Typography>
-              <Grid container spacing={0} sx={{ padding: "20px 0px 0px 0px" }}>
+              <Grid
+                container
+                spacing={0}
+                sx={{
+                  padding: "20px 0px 0px 0px",
+                  width: { lg: "85%", xs: "100%" },
+                }}
+              >
                 {items.map((item, index) => (
                   <Grid item key={index} xs={6} sm={4}>
                     <Box
                       sx={{
-                        borderRadius: "20px",
                         padding: "16px 16px 16px 0px",
                         height: "100%",
-                        width: "auto",
+                        width: "200px",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "normal",
+                        // border: '1px solid red',
+                        gap: "6px",
                       }}
                     >
                       <img src={item.imgUrl} />
@@ -119,7 +126,7 @@ function Hero() {
                   backgroundColor: "#fff",
                   color: "#000",
                   height: "56px",
-                  width: "159px",
+                  width: "169px",
                   textTransform: "none",
                   fontSize: "16px",
                   fontWeight: 500,
@@ -129,7 +136,7 @@ function Hero() {
                     backgroundColor: "#fff",
                     color: "#000",
                   },
-                  lineHeight: '24px',
+                  lineHeight: "24px",
                 }}
               >
                 Get Started

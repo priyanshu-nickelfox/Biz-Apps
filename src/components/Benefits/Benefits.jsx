@@ -5,6 +5,7 @@ import benefit2 from "../../assets/benefits-2.svg";
 import benefit3 from "../../assets/benefits-3.svg";
 import benefit4 from "../../assets/benefits-4.svg";
 import benefit5 from "../../assets/benefits-5.svg";
+import benefitBg from "../../assets/benefit-bg.png";
 
 const items = [
   {
@@ -15,12 +16,12 @@ const items = [
   {
     imgUrl: benefit2,
     title: "Scalable and Flexible Software Suite",
-    desc: "Implement seamless point-of-sale systems.",
+    desc: "Implement seamless point-of-sale<br>systems.",
   },
   {
     imgUrl: benefit3,
     title: "No Vendor / Data Lock-in",
-    desc: "Scalable and flexible software suite for dynamic business needs",
+    desc: "Scalable and flexible software suite for dynamic business needs.",
   },
   {
     imgUrl: benefit4,
@@ -40,16 +41,16 @@ const Benefits = () => {
       <Box
         sx={{
           color: "#fff",
-          padding: { lg: "0px 120px 0px 120px", xs: "20px 20px " },
+          padding: { lg: "100px 120px 100px 120px", xs: "20px 20px " },
           backgroundImage: `
           linear-gradient(
             to bottom,
             rgba(15, 16, 17, 1),
-            rgba(15, 16, 17, 0.5),
-            rgba(15, 16, 17, 0.9),
+            rgba(15, 16, 17, 0.7),
+            rgba(15, 16, 17, 0.8),
             rgba(15, 16, 17, 1)
           ),
-          url('src/assets/benefit-bg.png')
+          url(${benefitBg})
         `,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -98,7 +99,7 @@ const Benefits = () => {
                     height: "100%",
                     width: {
                       xs: "auto",
-                      lg: "auto",
+                      lg: "214px",
                     },
                   }}
                 >
@@ -109,22 +110,22 @@ const Benefits = () => {
                       color: "rgba(244, 244, 247, 1)",
                       fontSize: { lg: "18px", xs: "16px" },
                       fontWeight: 700,
-                      lineHeight: "24px",
+                      lineHeight: "27px",
+                      paddingTop: { lg: "20px", xs: "16px" },
                     }}
                   >
                     {item.title}
                   </Typography>
                   <Typography
+                    dangerouslySetInnerHTML={{ __html: item.desc }}
                     sx={{
                       paddingTop: "12px",
                       color: "rgba(131, 131, 143, 1)",
                       fontSize: { lg: "16px", xs: "14px" },
-                      lineHeight: "21px",
+                      lineHeight: "24px",
                       fontWeight: 400,
                     }}
-                  >
-                    {item.desc}
-                  </Typography>
+                  />
                 </Box>
               </Grid>
             ))}

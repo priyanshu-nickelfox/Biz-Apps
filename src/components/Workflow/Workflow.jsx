@@ -221,6 +221,23 @@ const GetWidth = () => {
   return width < 780 ? 248 : 379;
 };
 
+const iconWidth = () => {
+  const [iconWidth, setIconWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIconWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return iconWidth < 780 ? 20 : 32;
+};
+
 const Workflow = () => {
   const [expandedPanel, setExpandedPanel] = useState(null);
 
@@ -321,12 +338,13 @@ const Workflow = () => {
                       <img
                         src={item.icon}
                         alt={item.title}
-                        style={{ marginRight: "16px" }}
+                        style={{ marginRight: "16px",width:iconWidth() }}
                       />
                       <Typography
                         sx={{
                           fontSize: { lg: "20px", xs: "16px" },
                           fontWeight: 700,
+                          lineHeight: "26.04px",
                         }}
                       >
                         {item.title}
@@ -350,13 +368,13 @@ const Workflow = () => {
                       >
                         <ul>
                           {item.desc.map((i, idx) => (
-                            <Box sx={{ padding: "0px 0px 0px 0px" }}>
+                            <Box sx={{ padding: { lg: "16px 0px 0px 0px" } }}>
                               <li key={idx}>
                                 <Typography
                                   sx={{
                                     fontSize: { lg: "18px", xs: "14px" },
                                     fontWeight: 700,
-                                    lineHeight: "27px",
+                                    lineHeight: "21px",
                                   }}
                                 >
                                   {i.descTitle}

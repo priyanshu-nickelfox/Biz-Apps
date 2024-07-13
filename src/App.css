@@ -1,0 +1,17 @@
+.css-eqpfi5-MuiAccordionSummary-content.Mui-expanded {
+    margin: 0px !important;
+}
+.css-1d159sf-MuiSvgIcon-root {
+    width: 16.03px !important;
+    height: 16.03px !important;
+  
+    @media (min-width: 1200px) {
+      width: 24px !important;
+      height: 24px !important;
+    }
+  
+    @media (max-width: 599px) {
+      width: 16.03px !important;
+      height: 16.03px !important;
+    }
+  }

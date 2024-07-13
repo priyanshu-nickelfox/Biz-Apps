@@ -11,6 +11,7 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../../assets/logo.svg";
 import { styled } from "@mui/system";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 const pages = ["BizStack", "BizOs", "BizGear", "Blog", "Community"];
 
@@ -34,7 +35,7 @@ function Navbar() {
   }));
 
   const Notch = styled(Box)(({ theme }) => ({
-    width: "auto",
+    width: "673px",
     marginLeft: "3rem",
     backgroundColor: "#161718",
     borderRadius: "0 0 28px 28px",
@@ -119,13 +120,25 @@ function Navbar() {
           >
             <Iphone sx={{ display: { xs: "none", md: "flex" } }}>
               <Notch>
-                {pages.map((page) => (
+                {pages.map((page, index) => (
                   <Button
                     key={page}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, mx: 1.5, color: "white", display: "block" }}
+                    sx={{
+                      my: 2,
+                      mx: 1.5,
+                      color: "rgba(255, 255, 255, 1)",
+                      textTransform: "none",
+                      fontWeight: 500,
+                      fontSize: "18px",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
                   >
                     {page}
+                    {index === pages.length - 1 && (
+                      <KeyboardArrowDownIcon sx={{ marginLeft: "8px" }} />
+                    )}
                   </Button>
                 ))}
               </Notch>

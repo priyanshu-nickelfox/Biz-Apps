@@ -81,6 +81,23 @@ const GetWidth = () => {
   return width < 780 ? 248 : 379;
 };
 
+const iconWidth = () => {
+  const [iconWidth, setIconWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIconWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return iconWidth < 780 ? 20 : 32;
+};
+
 const Enterprise = () => {
   const [expandedPanel, setExpandedPanel] = useState(null);
 
@@ -171,7 +188,7 @@ const Enterprise = () => {
                         color: "rgba(193, 193, 201, 1)",
                         padding: {
                           lg: "20px 20px 16px 20px",
-                          xs: "0px 20px 0px 20px",
+                          xs: "12px 20px 0px 20px",
                         },
                         borderRadius: "20px",
                         display: "flex",
@@ -181,7 +198,7 @@ const Enterprise = () => {
                       <img
                         src={item.icon}
                         alt={item.title}
-                        style={{ marginRight: "16px" }}
+                        style={{ marginRight: "16px", width: iconWidth() }}
                       />
                       <Typography
                         sx={{
@@ -231,7 +248,8 @@ const Enterprise = () => {
                                     sx={{
                                       fontSize: { lg: "18px", xs: "14px" },
                                       fontWeight: 700,
-                                      lineHeight: "27px",
+                                      lineHeight: "21px",
+                                      padding: "6px 0px 4px 0px",
                                     }}
                                   >
                                     {i.descTitle}
@@ -242,7 +260,6 @@ const Enterprise = () => {
                                     fontSize: "14px",
                                     fontWeight: 400,
                                     lineHeight: "21px",
-                                    paddingTop: "4px",
                                   }}
                                 >
                                   {i.description}
