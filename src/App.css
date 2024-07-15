@@ -29,14 +29,6 @@
   }
 }
 
-/* @media (min-width: 0px) {
-  .css-1xm7vnb {
-      padding: 13px !important;
-      height: 100%;
-      width: auto;
-  }
-} */
-
 @media (max-width: 760px) {
   .css-1n00nhg {
     padding: 13px 4px 13px 13px !important;
@@ -51,6 +43,10 @@
   }
 }
 
-.css-1jogci6 {
+/* .css-1jogci6 {
   padding: 0px 0px 0px 0px !important;
+} */
+
+.workflowAccordion {
+  padding: 0px !important;
 }

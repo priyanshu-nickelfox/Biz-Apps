@@ -368,7 +368,7 @@ const Workflow = () => {
                       >
                         <ul>
                           {item.desc.map((i, idx) => (
-                            <Box sx={{ padding: { lg: "16px 0px 0px 0px" } }}>
+                            <Box className="workflowAccordion" sx={{ padding: { lg: "16px 0px 0px 0px" } }}>
                               <li key={idx}>
                                 <Typography
                                   sx={{
