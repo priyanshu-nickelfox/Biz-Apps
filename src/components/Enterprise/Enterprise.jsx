@@ -24,12 +24,12 @@ const items = [
   {
     icon: enterprise2,
     title: "Asset Management",
-    desc: "",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",
   },
   {
     icon: enterprise3,
     title: "Facility Management",
-    desc: "",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ",
   },
   {
     icon: enterprise4,
@@ -214,7 +214,7 @@ const Enterprise = () => {
                         backgroundColor: "rgba(33, 34, 36, 1)",
                         color: "rgba(193, 193, 201, 1)",
                         borderRadius: "16px",
-                        padding: "0px 20px 20px 40px",
+                        padding: "0px 20px 0px 40px",
                       }}
                     >
                       <Box
