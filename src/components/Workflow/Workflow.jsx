@@ -407,7 +407,7 @@ const Workflow = () => {
               >
                 <Box
                   sx={{
-                    padding: { lg: "160px 0px 290px 134px", xs: "32px 71px" },
+                    padding: { lg: "160px 0px 0px 134px", xs: "32px 71px" },
                   }}
                 >
                   <img

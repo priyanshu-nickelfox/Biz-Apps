@@ -109,7 +109,7 @@ const Enterprise = () => {
     <Box
       sx={{
         color: "#fff",
-        padding: { lg: "0px 120px 0px 120px", xs: "0px 20px " },
+        padding: { lg: "100px 120px 100px 120px", xs: "0px 20px " },
         overflow: "hidden",
       }}
     >
@@ -282,7 +282,7 @@ const Enterprise = () => {
               >
                 <Box
                   sx={{
-                    padding: { lg: "0px 0px 290px 134px", xs: "32px 71px" },
+                    padding: { lg: "0px 0px 0px 134px", xs: "32px 71px" },
                   }}
                 >
                   <img

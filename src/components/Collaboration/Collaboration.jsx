@@ -163,7 +163,7 @@ const Collaboration = () => {
               >
                 <Box
                   sx={{
-                    padding: { lg: "80px 134px 228px 0px", xs: "32px 89px" },
+                    padding: { lg: "80px 134px 0px 0px", xs: "32px 89px" },
                   }}
                 >
                   <img
