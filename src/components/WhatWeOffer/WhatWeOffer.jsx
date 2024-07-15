@@ -215,7 +215,7 @@ const WhatWeOffer = () => {
                             ? "rgba(33, 34, 36, 1)"
                             : "#0F1011",
                         color: "rgba(193, 193, 201, 1)",
-                        padding: "20px 20px 10px 20px",
+                        padding: "20px 20px 0px 20px",
                         borderRadius: "20px",
                         display: "flex",
                         alignItems: "center",
