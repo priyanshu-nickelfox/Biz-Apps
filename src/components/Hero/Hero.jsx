@@ -162,6 +162,7 @@ function Hero() {
               style={{
                 width: GetWidth(),
                 height: "auto",
+                marginLeft: "20px",
               }}
             />
           </Box>
