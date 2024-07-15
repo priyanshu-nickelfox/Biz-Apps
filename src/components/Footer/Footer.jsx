@@ -51,12 +51,13 @@ const FooterComponent = () => {
           <Typography
             variant="body1"
             sx={{
-              fontSize: "1rem",
-              paddingRight: { lg: "2rem", xs: "0rem" },
+              fontSize: { xs: "14px", lg: "16px" },
+              paddingRight: { lg: "4rem", xs: "0rem", md: "2rem" },
               fontWeight: 400,
               color: "#A7A7A8",
               marginTop: "1rem",
               lineHeight: { lg: "24px", xs: "21px" },
+              fontFamily: "Helvetica Neue,sans-serif",
             }}
           >
             Welcome to OpenTECHE.io, where affordable open-source technologies
@@ -95,6 +96,7 @@ const FooterComponent = () => {
                       color: "#FFFFFF",
 
                       fontWeight: 500,
+                      fontFamily: "Helvetica Neue, sans-serif",
                     },
 
                     "& input": {
@@ -121,8 +123,11 @@ const FooterComponent = () => {
                   color: "white",
                   height: "43px",
                   marginLeft: "10px",
-                  fontSize: "12px",
+                  fontSize: "14px",
                   width: "92px",
+                  textTransform: "none",
+                  fontFamily: "Helvetica Neue, sans-serif",
+                  fontWeight: 500,
                 }}
               >
                 Sign Up
@@ -146,7 +151,7 @@ const FooterComponent = () => {
               sx={{
                 display: "block",
                 marginTop: { lg: "1.5rem", xs: "1rem" },
-                fontFamily: "Helvetica Neue",
+                fontFamily: "Helvetica Neue,sans-serif",
                 fontSize: "16px",
                 color: "#BEBEBE",
               }}
@@ -170,7 +175,7 @@ const FooterComponent = () => {
               sx={{
                 display: "block",
                 marginTop: { lg: "1.5rem", xs: "1rem" },
-                fontFamily: "Helvetica Neue",
+                fontFamily: "Helvetica Neue,sans-serif",
                 fontSize: "16px",
                 color: "#BEBEBE",
               }}
@@ -188,7 +193,7 @@ const FooterComponent = () => {
           <Box>
             <Typography
               sx={{
-                fontFamily: "Helvetica Neue",
+                fontFamily: "Helvetica Neue,sans-serif",
                 marginTop: "1rem",
                 fontSize: "16px",
                 color: "#BEBEBE",
@@ -203,7 +208,7 @@ const FooterComponent = () => {
               underline="none"
               style={{
                 display: "block",
-                fontFamily: "Helvetica Neue",
+                fontFamily: "Helvetica Neue,sans-serif",
                 fontSize: "1rem",
                 color: "#fff",
                 textDecoration: "underline",

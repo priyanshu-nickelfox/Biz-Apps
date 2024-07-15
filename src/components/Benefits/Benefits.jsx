@@ -41,7 +41,7 @@ const Benefits = () => {
       <Box
         sx={{
           color: "#fff",
-          padding: { lg: "100px 120px 100px 120px", xs: "20px 20px " },
+          padding: { lg: "100px 120px 100px 120px", xs: "20px 10px " },
           backgroundImage: `
           linear-gradient(
             to bottom,
@@ -61,14 +61,14 @@ const Benefits = () => {
           sx={{
             backgroundColor: { xs: "#1F2122", sm: "transparent" },
             borderRadius: "16px",
-            padding: "20px",
+            padding: "14px",
           }}
         >
           <Typography
             sx={{
               fontSize: { lg: "42px", xs: "32px" },
               fontWeight: 700,
-              padding: "20px 20px 0px 20px",
+              padding: "20px 20px 0px 0px",
             }}
           >
             Benefits
@@ -96,10 +96,10 @@ const Benefits = () => {
                       lg: "24px 24px 51px 24px",
                       xs: "16px",
                     },
-                    height: "100%",
+                    height: {lg:'265px',xs:"100%"},
                     width: {
                       xs: "auto",
-                      lg: "214px",
+                      lg: "212px",
                     },
                   }}
                 >
@@ -110,7 +110,7 @@ const Benefits = () => {
                       color: "rgba(244, 244, 247, 1)",
                       fontSize: { lg: "18px", xs: "16px" },
                       fontWeight: 700,
-                      lineHeight: "27px",
+                      lineHeight: { lg: "27px", xs: "24px" },
                       paddingTop: { lg: "20px", xs: "16px" },
                     }}
                   >
