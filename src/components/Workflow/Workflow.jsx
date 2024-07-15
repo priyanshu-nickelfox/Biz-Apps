@@ -327,7 +327,7 @@ const Workflow = () => {
                             : "#0F1011",
                         color: "rgba(193, 193, 201, 1)",
                         padding: {
-                          lg: "20px 20px 16px 20px",
+                          lg: "20px 20px 0px 20px",
                           xs: "12px 20px 16px 20px",
                         },
                         borderRadius: "20px",
@@ -338,7 +338,7 @@ const Workflow = () => {
                       <img
                         src={item.icon}
                         alt={item.title}
-                        style={{ marginRight: "16px",width:iconWidth() }}
+                        style={{ marginRight: "16px", width: iconWidth() }}
                       />
                       <Typography
                         sx={{
@@ -368,7 +368,10 @@ const Workflow = () => {
                       >
                         <ul>
                           {item.desc.map((i, idx) => (
-                            <Box className="workflowAccordion" sx={{ padding: { lg: "16px 0px 0px 0px" } }}>
+                            <Box
+                              className="workflowAccordion"
+                              sx={{ padding: { lg: "16px 0px 0px 0px" } }}
+                            >
                               <li key={idx}>
                                 <Typography
                                   sx={{

@@ -47,6 +47,12 @@
   padding: 0px 0px 0px 0px !important;
 } */
 
-.workflowAccordion {
+/* .workflowAccordion {
   padding: 0px !important;
+} */
+
+.MuiAccordionSummary-content .Mui-expanded .MuiAccordionSummary-contentGutters {
+
+  padding: 0px !important;
+
 }
