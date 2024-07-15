@@ -1,5 +1,6 @@
 import { Typography, Link, Grid, Box, Button, TextField } from "@mui/material";
 import logo from "../../assets/logo.svg";
+import { useState } from "react";
 
 const FooterInformation = [
   { title: "Support Service", link: "" },
@@ -17,6 +18,112 @@ const FooterDiscord = [
 ];
 
 const FooterComponent = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    let newValue = value;
+    let error = null;
+
+    if (id === "name") {
+      newValue = value.replace(/[0-9]/g, "");
+      if (value !== newValue) {
+        error = "Name should not contain numbers";
+      }
+    } else if (id === "phone") {
+      newValue = value.replace(/[^0-9]/g, "").slice(0, 10);
+      if (value !== newValue) {
+        error = "Phone number should only contain digits";
+      }
+    }
+
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: newValue,
+    }));
+
+    if (error) {
+      setErrors((prev) => ({ ...prev, [id]: error }));
+    } else {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors[id];
+        return newErrors;
+      });
+    }
+  };
+
+  const validateField = (fieldName, fieldValue) => {
+    let tempErrors = { ...errors };
+    switch (fieldName) {
+      case "name":
+        if (!fieldValue) {
+          tempErrors.name = "Name is required";
+        } else if (/\d/.test(fieldValue)) {
+          tempErrors.name = "Name should not contain any numbers";
+        } else {
+          delete tempErrors.name;
+        }
+        break;
+      case "email":
+        if (!fieldValue) {
+          tempErrors.email = "Email is required";
+        } else if (fieldValue.length < 10) {
+          return;
+        } else if (!/\S+@\S+\.\S+/.test(fieldValue)) {
+          tempErrors.email = "Email is invalid";
+        } else {
+          delete tempErrors.email;
+        }
+        break;
+      case "phone":
+        if (!fieldValue) {
+          tempErrors.phone = "Phone is required";
+        } else if (!/^\d{10}$/.test(fieldValue)) {
+          tempErrors.phone = "Phone number is invalid";
+        } else {
+          delete tempErrors.phone;
+        }
+        break;
+      default:
+        break;
+    }
+    setErrors(tempErrors);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log(formData);
+    }
+  };
+
+  const validateForm = () => {
+    let tempErrors = { ...errors };
+    if (!formData.name) {
+      tempErrors.name = "Name is required";
+    } else if (/\d/.test(formData.name)) {
+      tempErrors.name = "Name should not contain any numbers";
+    }
+    if (!formData.email) {
+      tempErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      tempErrors.email = "Email is invalid";
+    }
+    if (!formData.phone) {
+      tempErrors.phone = "Phone is required";
+    } else if (!/^\d{10}$/.test(formData.phone)) {
+      tempErrors.phone = "Phone number is invalid";
+    }
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
+
   return (
     <Grid
       container
@@ -190,7 +297,7 @@ const FooterComponent = () => {
           >
             Contact Us
           </Typography>
-          <Box>
+          {/* <Box>
             <Typography
               sx={{
                 fontFamily: "Helvetica Neue,sans-serif",
@@ -246,7 +353,178 @@ const FooterComponent = () => {
             >
               +1833 338 3243
             </span>
-          </Typography>
+          </Typography> */}
+          <Box
+            component="form"
+            noValidate
+            autoComplete="off"
+            sx={{ display: "flex", flexDirection: "column" }}
+            onSubmit={handleSubmit}
+          >
+            <TextField
+              fullWidth
+              required
+              id="name"
+              placeholder="Your Name"
+              variant="outlined"
+              margin="normal"
+              value={formData.name}
+              onChange={handleChange}
+              error={!!errors.name}
+              helperText={errors.name}
+              sx={{
+                width: { xl: "80%", lg: "100%" },
+                height: "43px",
+                backgroundColor: "#2A2B2C",
+                borderRadius: 1,
+                "& .MuiOutlinedInput-root": {
+                  height: "100%",
+                  "& fieldset": {
+                    borderColor: "transparent",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "gray",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "gray",
+                  },
+                  "& input::placeholder": {
+                    color: "#FFFFFF",
+                    fontWeight: 500,
+                    fontFamily: "Helvetica Neue, sans-serif",
+                  },
+                  "& input": {
+                    color: "#fff",
+                    fontWeight: 300,
+                  },
+                },
+                "@media(max-width: 475px)": {
+                  height: "43px",
+                  "& input::placeholder": {
+                    fontSize: "12px",
+                  },
+                },
+                "@media(min-width: 1500px)": {
+                  height: "48px",
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              required
+              id="email"
+              placeholder="Your Email"
+              variant="outlined"
+              margin="normal"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              error={!!errors.email}
+              helperText={errors.email}
+              sx={{
+                width: { xl: "80%", lg: "100%" },
+                height: "43px",
+                backgroundColor: "#2A2B2C",
+                borderRadius: 1,
+                "& .MuiOutlinedInput-root": {
+                  height: "100%",
+                  "& fieldset": {
+                    borderColor: "transparent",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "gray",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "gray",
+                  },
+                  "& input::placeholder": {
+                    color: "#FFFFFF",
+                    fontWeight: 500,
+                    fontFamily: "Helvetica Neue, sans-serif",
+                  },
+                  "& input": {
+                    color: "#fff",
+                    fontWeight: 300,
+                  },
+                },
+                "@media(max-width: 475px)": {
+                  height: "43px",
+                  "& input::placeholder": {
+                    fontSize: "12px",
+                  },
+                },
+                "@media(min-width: 1500px)": {
+                  height: "48px",
+                },
+              }}
+            />
+            <TextField
+              fullWidth
+              required
+              id="phone"
+              placeholder="Your Phone Number"
+              variant="outlined"
+              margin="normal"
+              value={formData.phone}
+              onChange={handleChange}
+              error={!!errors.phone}
+              helperText={errors.phone}
+              sx={{
+                width: { xl: "80%", lg: "100%" },
+                height: "43px",
+                backgroundColor: "#2A2B2C",
+                borderRadius: 1,
+
+                "& .MuiOutlinedInput-root": {
+                  height: "100%",
+                  "& fieldset": {
+                    borderColor: "transparent",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "gray",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "gray",
+                  },
+                  "& input::placeholder": {
+                    color: "#FFFFFF",
+                    fontWeight: 500,
+                    fontFamily: "Helvetica Neue, sans-serif",
+                  },
+                  "& input": {
+                    color: "#fff",
+                    fontWeight: 300,
+                  },
+                },
+                "@media(max-width: 475px)": {
+                  height: "43px",
+                  "& input::placeholder": {
+                    fontSize: "12px",
+                  },
+                },
+                "@media(min-width: 1500px)": {
+                  height: "48px",
+                },
+              }}
+            />
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                backgroundColor: "#2A2B2C",
+                color: "white",
+                height: "43px",
+                fontSize: "14px",
+                width: "92px",
+                textTransform: "none",
+                fontFamily: "Helvetica Neue, sans-serif",
+                fontWeight: 500,
+                marginTop: "10px",
+              }}
+            >
+              Submit
+            </Button>
+          </Box>
         </Grid>
       </Grid>
     </Grid>
