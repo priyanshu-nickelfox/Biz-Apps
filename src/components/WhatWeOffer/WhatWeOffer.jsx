@@ -231,6 +231,8 @@ const WhatWeOffer = () => {
                         sx={{
                           fontSize: { lg: "20px", xs: "16px" },
                           fontWeight: 700,
+                          display: "flex",
+                          alignItems: "center",
                         }}
                       >
                         {item.title}

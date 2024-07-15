@@ -13,8 +13,6 @@ import collab1 from "../../assets/collab-1.svg";
 import collab2 from "../../assets/collab-2.svg";
 import comp3 from "../../assets/offer-3.png";
 
-
-
 const items = [
   {
     icon: collab1,
@@ -232,13 +230,14 @@ const Collaboration = () => {
                       <img
                         src={item.icon}
                         alt={item.title}
-                        style={{ marginRight: "16px",width:iconWidth() }}
-                        
+                        style={{ marginRight: "16px", width: iconWidth() }}
                       />
                       <Typography
                         sx={{
                           fontSize: { lg: "20px", xs: "16px" },
                           fontWeight: 700,
+                          display: "flex",
+                          alignItems: "center",
                         }}
                       >
                         {item.title}

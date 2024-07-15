@@ -327,7 +327,7 @@ const Workflow = () => {
                             : "#0F1011",
                         color: "rgba(193, 193, 201, 1)",
                         padding: {
-                          lg: "20px 20px 0px 20px",
+                          lg: "20px 20px 10px 20px",
                           xs: "12px 20px 16px 20px",
                         },
                         borderRadius: "20px",
@@ -345,6 +345,8 @@ const Workflow = () => {
                           fontSize: { lg: "20px", xs: "16px" },
                           fontWeight: 700,
                           lineHeight: "26.04px",
+                          display: "flex",
+                          alignItems: "center",
                         }}
                       >
                         {item.title}
