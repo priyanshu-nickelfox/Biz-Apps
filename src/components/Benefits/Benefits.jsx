@@ -96,7 +96,7 @@ const Benefits = () => {
                       lg: "24px 24px 51px 24px",
                       xs: "16px",
                     },
-                    height: {lg:'265px',xs:"100%"},
+                    height: { lg: "265px", xs: "100%" },
                     width: {
                       xs: "auto",
                       lg: "212px",
@@ -106,7 +106,6 @@ const Benefits = () => {
                   <img src={item.imgUrl} />
                   <Typography
                     sx={{
-                      paddingTop: "12px",
                       color: "rgba(244, 244, 247, 1)",
                       fontSize: { lg: "18px", xs: "16px" },
                       fontWeight: 700,
