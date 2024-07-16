@@ -243,7 +243,7 @@ const FooterComponent = () => {
           </Grid>
         </Grid>
 
-        <Grid item xs={6} sm={6} md>
+        <Grid item xs={6} sm={4} md>
           <Typography
             sx={{ fontSize: "20px", fontWeight: 500, lineHeight: "30px" }}
           >
@@ -267,7 +267,7 @@ const FooterComponent = () => {
             </Link>
           ))}
         </Grid>
-        <Grid item xs={6} sm={6} md>
+        <Grid item xs={6} sm={4} md>
           <Typography
             sx={{ fontSize: "20px", fontWeight: 500, lineHeight: "30px" }}
           >
@@ -291,7 +291,7 @@ const FooterComponent = () => {
             </Link>
           ))}
         </Grid>
-        <Grid item xs={12} sm={12} md={4} lg={4}>
+        <Grid item xs={12} sm={4} md={4} lg={4}>
           <Typography
             sx={{ fontSize: "20px", fontWeight: 500, lineHeight: "30px" }}
           >
@@ -373,7 +373,7 @@ const FooterComponent = () => {
               error={!!errors.name}
               helperText={errors.name}
               sx={{
-                width: { lg: "80%", sm: "40%", xs: "100%" },
+                width: { lg: "80%", sm: "80%", xs: "100%" },
                 height: "43px",
                 backgroundColor: "#2A2B2C",
                 borderRadius: 1,
@@ -422,7 +422,7 @@ const FooterComponent = () => {
               error={!!errors.email}
               helperText={errors.email}
               sx={{
-                width: { lg: "80%", sm: "40%", xs: "100%" },
+                width: { lg: "80%", sm: "80%", xs: "100%" },
                 height: "43px",
                 backgroundColor: "#2A2B2C",
                 borderRadius: 1,
@@ -470,7 +470,7 @@ const FooterComponent = () => {
               error={!!errors.phone}
               helperText={errors.phone}
               sx={{
-                width: { lg: "80%", sm: "40%", xs: "100%" },
+                width: { lg: "80%", sm: "80%", xs: "100%" },
                 height: "43px",
                 backgroundColor: "#2A2B2C",
                 borderRadius: 1,
