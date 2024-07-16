@@ -373,7 +373,7 @@ const FooterComponent = () => {
               error={!!errors.name}
               helperText={errors.name}
               sx={{
-                width: { xl: "80%", lg: "100%" },
+                width: { lg: "80%", sm: "40%", xs: "100%" },
                 height: "43px",
                 backgroundColor: "#2A2B2C",
                 borderRadius: 1,
@@ -422,7 +422,7 @@ const FooterComponent = () => {
               error={!!errors.email}
               helperText={errors.email}
               sx={{
-                width: { xl: "80%", lg: "100%" },
+                width: { lg: "80%", sm: "40%", xs: "100%" },
                 height: "43px",
                 backgroundColor: "#2A2B2C",
                 borderRadius: 1,
@@ -470,7 +470,7 @@ const FooterComponent = () => {
               error={!!errors.phone}
               helperText={errors.phone}
               sx={{
-                width: { xl: "80%", lg: "100%" },
+                width: { lg: "80%", sm: "40%", xs: "100%" },
                 height: "43px",
                 backgroundColor: "#2A2B2C",
                 borderRadius: 1,
