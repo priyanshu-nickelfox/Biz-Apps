@@ -86,14 +86,14 @@ const IndustrySolutions = () => {
             Industry Solutions
           </Typography>
           <Grid
-            container
+            container 
             spacing={{ xs: 2, lg: 6 }}
             sx={{
-              padding: { lg: "32px 40px 48px 0px", xs: "32px 0px 0px 0px" },
+              padding: { lg: window.innerWidth >= 1200 && window.innerWidth <= 1430 ? "32px 0px 48px 0px" : "32px 40px 48px 0px", xs: "32px 0px 0px 0px" },
             }}
           >
             {items.map((item, index) => (
-              <Grid item key={index} xs={6} sm={3}>
+              <Grid item key={index} xs={6} sm={3} md={4} lg={3}>
                 <Box
                   sx={{
                     position: "relative",
@@ -104,8 +104,8 @@ const IndustrySolutions = () => {
                     },
                     height: { lg: "127px", xs: "100%" },
                     width: {
-                      lg: "276px",
-                      //   xs: "187px"
+                      lg: window.innerWidth >= 1200 && window.innerWidth <= 1430 ? "200px" : "276px",
+                        // xs: "187px"
                     },
                   }}
                 >

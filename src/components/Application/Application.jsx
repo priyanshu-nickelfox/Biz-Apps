@@ -5,7 +5,7 @@ import application1 from "../../assets/application-1.svg";
 import application2 from "../../assets/application-2.svg";
 import application3 from "../../assets/application-3.svg";
 import application4 from "../../assets/application-4.svg";
-import backgroundImg from '../../assets/background.jpeg'
+import backgroundImg from "../../assets/background.jpeg";
 
 const items = [
   {
@@ -89,7 +89,10 @@ const Application = () => {
                     },
                     height: "115px",
                     width: {
-                      lg: "250px",
+                      lg:
+                        window.innerWidth >= 1200 && window.innerWidth <= 1430
+                          ? "auto"
+                          : "250px",
                     },
                     display: "flex",
                     flexDirection: "column",

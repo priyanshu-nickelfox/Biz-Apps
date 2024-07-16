@@ -99,7 +99,7 @@ const Benefits = () => {
                     height: { lg: "265px", xs: "100%" },
                     width: {
                       xs: "auto",
-                      lg: "212px",
+                      lg: window.innerWidth >= 1200 && window.innerWidth <= 1430 ? 'auto' : "212px",
                     },
                   }}
                 >

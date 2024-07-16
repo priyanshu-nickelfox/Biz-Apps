@@ -144,7 +144,8 @@ function Navbar() {
               </Notch>
             </Iphone>
           </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" },
+                paddingLeft: window.innerWidth >= 1200 && window.innerWidth <= 1430 ? '24px' : '0px' }}>
             <Button
               sx={{
                 color: "white",
@@ -156,7 +157,7 @@ function Navbar() {
                 lineHeight: "20px",
                 width: "110px",
                 height: "52px",
-                textTransform: "none",
+                textTransform: "none"
               }}
             >
               Login

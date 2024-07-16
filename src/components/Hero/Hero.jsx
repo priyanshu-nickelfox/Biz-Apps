@@ -79,6 +79,10 @@ function Hero() {
                   WebkitTextFillColor: "transparent",
                   lineHeight: { lg: "83.33px", xs: "52.08px" },
                   textAlign: { lg: "left", xs: "left" },
+                  marginLeft:
+                    window.innerWidth >= 1200 && window.innerWidth <= 1430
+                      ? "10px"
+                      : "0px",
                 }}
               >
                 Customize Business Workflows with Unified Software Suite
@@ -88,7 +92,7 @@ function Hero() {
                 spacing={0}
                 sx={{
                   padding: "20px 0px 0px 0px",
-                  width: { lg: "85%", xs: "100%" },
+                  width: { lg: "85%", md: "70%", xs: "100%" },
                 }}
               >
                 {items.map((item, index) => (
@@ -162,7 +166,10 @@ function Hero() {
               style={{
                 width: GetWidth(),
                 height: "auto",
-                marginLeft: "20px",
+                marginLeft:
+                  window.innerWidth >= 1200 && window.innerWidth <= 1430
+                    ? "350px"
+                    : "20px",
               }}
             />
           </Box>
