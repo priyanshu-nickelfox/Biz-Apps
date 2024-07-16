@@ -124,6 +124,8 @@ const FooterComponent = () => {
     return Object.keys(tempErrors).length === 0;
   };
 
+  const [emailError, setEmailError] = useState("");
+
   return (
     <Grid
       container
@@ -171,76 +173,87 @@ const FooterComponent = () => {
             empower businesses and individuals. Explore our innovative products
             revolutionizing industries and enhancing personal experiences.
           </Typography>
-          <Grid
-            container
-            alignItems="center"
+          <form onSubmit={handleSubmit}>
+      <Grid
+        container
+        alignItems="center"
+        sx={{
+          mt: 4,
+        }}
+      >
+        <Grid item xs md={7.5}>
+          <TextField
+            name="email"
+            variant="outlined"
+            placeholder="Your Email Here"
+            type="email"
+            required
+            error={Boolean(emailError)}
+            helperText={emailError}
+            onChange={(e) => {
+              const email = e.target.value;
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailRegex.test(email)) {
+                setEmailError('Please enter a valid email address.');
+              } else {
+                setEmailError('');
+              }
+            }}
             sx={{
-              mt: 4,
+              width: '100%',
+              height: '43px',
+              backgroundColor: '#2A2B2C',
+              borderRadius: 1,
+              '& .MuiOutlinedInput-root': {
+                height: '100%',
+                '& fieldset': {
+                  borderColor: 'transparent',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'gray',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'gray',
+                },
+                '& input::placeholder': {
+                  color: '#FFFFFF',
+                  fontWeight: 500,
+                  fontFamily: 'Helvetica Neue, sans-serif',
+                },
+                '& input': {
+                  color: '#fff',
+                  fontWeight: 300,
+                },
+              },
+              '@media(max-width: 475px)': {
+                height: '43px',
+                '& input::placeholder': {
+                  fontSize: '12px',
+                },
+              },
+            }}
+          />
+        </Grid>
+        <Grid item xs="auto">
+          <Button
+            type="submit"
+            sx={{
+              backgroundColor: '#2A2B2C',
+              color: 'white',
+              height: '43px',
+              marginLeft: '10px',
+              fontSize: '14px',
+              width: '92px',
+              textTransform: 'none',
+              fontFamily: 'Helvetica Neue, sans-serif',
+              fontWeight: 500,
             }}
           >
-            <Grid item xs md={7.5}>
-              <TextField
-                variant="outlined"
-                placeholder="Your Email Here"
-                sx={{
-                  width: "100%",
-                  height: "43px",
-                  backgroundColor: "#2A2B2C",
-                  borderRadius: 1,
-                  "& .MuiOutlinedInput-root": {
-                    height: "100%",
-                    "& fieldset": {
-                      borderColor: "transparent",
-                    },
-                    "&:hover fieldset": {
-                      borderColor: "gray",
-                    },
-                    "&.Mui-focused fieldset": {
-                      borderColor: "gray",
-                    },
-
-                    "& input::placeholder": {
-                      color: "#FFFFFF",
-
-                      fontWeight: 500,
-                      fontFamily: "Helvetica Neue, sans-serif",
-                    },
-
-                    "& input": {
-                      color: "#fff",
-
-                      fontWeight: 300,
-                    },
-                  },
-
-                  "@media(max-width: 475px)": {
-                    height: "43px",
-                    "& input::placeholder": {
-                      fontSize: "12px",
-                    },
-                  },
-                }}
-              />{" "}
-            </Grid>{" "}
-            <Grid item xs="auto">
-              {" "}
-              <Button
-                sx={{
-                  backgroundColor: "#2A2B2C",
-                  color: "white",
-                  height: "43px",
-                  marginLeft: "10px",
-                  fontSize: "14px",
-                  width: "92px",
-                  textTransform: "none",
-                  fontFamily: "Helvetica Neue, sans-serif",
-                  fontWeight: 500,
-                }}
-              >
-                Sign Up
-              </Button>
-            </Grid>
-          </Grid>
+            Sign Up
+          </Button>
+        </Grid>
+      </Grid>
+    </form>
         </Grid>
 
         <Grid item xs={6} sm={4} md>
