@@ -103,6 +103,17 @@ const FooterComponent = () => {
     }
   };
 
+  const handleSubmitEmail = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setEmailError('Please enter a valid email address.');
+    } else {
+      setEmailError('');
+    }
+  };
+
   const validateForm = () => {
     let tempErrors = { ...errors };
     if (!formData.name) {
@@ -173,7 +184,7 @@ const FooterComponent = () => {
             empower businesses and individuals. Explore our innovative products
             revolutionizing industries and enhancing personal experiences.
           </Typography>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmitEmail}>
       <Grid
         container
         alignItems="center"
@@ -201,37 +212,40 @@ const FooterComponent = () => {
             }}
             sx={{
               width: '100%',
-              height: '43px',
-              backgroundColor: '#2A2B2C',
-              borderRadius: 1,
-              '& .MuiOutlinedInput-root': {
-                height: '100%',
-                '& fieldset': {
-                  borderColor: 'transparent',
+              height: "43px",
+                backgroundColor: "#2A2B2C",
+                borderRadius: 1,
+                "& .MuiOutlinedInput-root": {
+                  height: "100%",
+                  "& fieldset": {
+                    borderColor: "transparent",
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "gray",
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "gray",
+                  },
+                  "& input::placeholder": {
+                    color: "#FFFFFF",
+                    fontWeight: 500,
+                    fontFamily: "Helvetica Neue, sans-serif",
+                  },
+                  "& input": {
+                    color: "#fff",
+                    fontWeight: 300,
+                  },
                 },
-                '&:hover fieldset': {
-                  borderColor: 'gray',
+                "@media(max-width: 475px)": {
+                  height: "43px",
+                  "& input::placeholder": {
+                    fontSize: "12px",
+                  },
                 },
-                '&.Mui-focused fieldset': {
-                  borderColor: 'gray',
+                "@media(min-width: 1500px)": {
+                  height: "48px",
                 },
-                '& input::placeholder': {
-                  color: '#FFFFFF',
-                  fontWeight: 500,
-                  fontFamily: 'Helvetica Neue, sans-serif',
-                },
-                '& input': {
-                  color: '#fff',
-                  fontWeight: 300,
-                },
-              },
-              '@media(max-width: 475px)': {
-                height: '43px',
-                '& input::placeholder': {
-                  fontSize: '12px',
-                },
-              },
-            }}
+              }}
           />
         </Grid>
         <Grid item xs="auto">
