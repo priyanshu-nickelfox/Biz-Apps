@@ -216,7 +216,7 @@ const Enterprise = () => {
                         backgroundColor: "rgba(33, 34, 36, 1)",
                         color: "rgba(193, 193, 201, 1)",
                         borderRadius: "16px",
-                        padding: "0px 20px 0px 40px",
+                        padding: "0px 20px 10px 40px",
                       }}
                     >
                       <Box
