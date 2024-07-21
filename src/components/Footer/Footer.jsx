@@ -24,7 +24,6 @@ const FooterComponent = () => {
     phone: "",
   });
   const [errors, setErrors] = useState({});
-
   const handleChange = (e) => {
     const { id, value } = e.target;
     let newValue = value;
@@ -37,8 +36,9 @@ const FooterComponent = () => {
       }
     } else if (id === "phone") {
       newValue = value.replace(/[^0-9]/g, "").slice(0, 10);
-      if (value !== newValue) {
-        error = "Phone number should only contain digits";
+
+      if (newValue.length < 10) {
+        error = "Phone number must be 10 digits long";
       }
     }
 
@@ -47,15 +47,15 @@ const FooterComponent = () => {
       [id]: newValue,
     }));
 
-    if (error) {
-      setErrors((prev) => ({ ...prev, [id]: error }));
-    } else {
-      setErrors((prev) => {
-        const newErrors = { ...prev };
+    setErrors((prev) => {
+      const newErrors = { ...prev };
+      if (error) {
+        newErrors[id] = error;
+      } else {
         delete newErrors[id];
-        return newErrors;
-      });
-    }
+      }
+      return newErrors;
+    });
   };
 
   const validateField = (fieldName, fieldValue) => {
@@ -108,9 +108,9 @@ const FooterComponent = () => {
     const email = e.target.email.value;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setEmailError('Please enter a valid email address.');
+      setEmailError("Please enter a valid email address.");
     } else {
-      setEmailError('');
+      setEmailError("");
     }
   };
 
@@ -185,89 +185,99 @@ const FooterComponent = () => {
             revolutionizing industries and enhancing personal experiences.
           </Typography>
           <form onSubmit={handleSubmitEmail}>
-      <Grid
-        container
-        alignItems="center"
-        sx={{
-          mt: 4,
-        }}
-      >
-        <Grid item xs md={7.5}>
-          <TextField
-            name="email"
-            variant="outlined"
-            placeholder="Your Email Here"
-            type="email"
-            required
-            error={Boolean(emailError)}
-            helperText={emailError}
-            onChange={(e) => {
-              const email = e.target.value;
-              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-              if (!emailRegex.test(email)) {
-                setEmailError('Please enter a valid email address.');
-              } else {
-                setEmailError('');
-              }
-            }}
-            sx={{
-              width: '100%',
-              height: "43px",
-                backgroundColor: "#2A2B2C",
-                borderRadius: 1,
-                "& .MuiOutlinedInput-root": {
-                  height: "100%",
-                  "& fieldset": {
-                    borderColor: "transparent",
-                  },
-                  "&:hover fieldset": {
-                    borderColor: "gray",
-                  },
-                  "&.Mui-focused fieldset": {
-                    borderColor: "gray",
-                  },
-                  "& input::placeholder": {
-                    color: "#FFFFFF",
-                    fontWeight: 500,
-                    fontFamily: "Helvetica Neue, sans-serif",
-                  },
-                  "& input": {
-                    color: "#fff",
-                    fontWeight: 300,
-                  },
-                },
-                "@media(max-width: 475px)": {
-                  height: "43px",
-                  "& input::placeholder": {
-                    fontSize: "12px",
-                  },
-                },
-                "@media(min-width: 1500px)": {
-                  height: "48px",
-                },
+            <Grid
+              container
+              alignItems="center"
+              sx={{
+                mt: 4,
               }}
-          />
-        </Grid>
-        <Grid item xs="auto">
-          <Button
-            type="submit"
-            sx={{
-              backgroundColor: '#2A2B2C',
-              color: 'white',
-              height: '43px',
-              marginLeft: '10px',
-              fontSize: '14px',
-              width: '92px',
-              textTransform: 'none',
-              fontFamily: 'Helvetica Neue, sans-serif',
-              fontWeight: 500,
-            }}
-          >
-            Sign Up
-          </Button>
-        </Grid>
-      </Grid>
-    </form>
+            >
+              <Grid item xs md={7.5}>
+                <TextField
+                  name="email"
+                  variant="outlined"
+                  placeholder="Your Email Here"
+                  type="email"
+                  required
+                  error={Boolean(emailError)}
+                  helperText={emailError}
+                  onChange={(e) => {
+                    const email = e.target.value;
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                      setEmailError("Please enter a valid email address.");
+                    } else {
+                      setEmailError("");
+                    }
+                  }}
+                  sx={{
+                    width: "100%",
+                    height: "43px",
+                    backgroundColor: "#2A2B2C",
+                    borderRadius: 1,
+                    "& .MuiOutlinedInput-root": {
+                      height: "100%",
+
+                      "& fieldset": {
+                        borderColor: "transparent",
+                      },
+                      "&:hover fieldset": {
+                        borderColor: "gray",
+                      },
+                      "&.Mui-focused fieldset": {
+                        borderColor: "gray",
+                      },
+                      "& input::placeholder": {
+                        color: "#FFFFFF",
+                        fontWeight: 500,
+                        fontFamily: "Helvetica Neue, sans-serif",
+                      },
+                      "& input": {
+                        color: "#fff",
+                        fontWeight: 300,
+                      },
+                      "& input:-webkit-autofill": {
+                        WebkitBoxShadow: "0 0 0 1000px #2A2B2C inset",
+                        WebkitTextFillColor: "#fff",
+                        borderRadius: "4px",
+                      },
+                    },
+                    "@media(max-width: 475px)": {
+                      height: "43px",
+                      "& input::placeholder": {
+                        fontSize: "12px",
+                      },
+                    },
+                    "@media(min-width: 1500px)": {
+                      height: "48px",
+                    },
+                  }}
+                />
+              </Grid>
+              <Grid item xs="auto">
+                <Button
+                  type="submit"
+                  sx={{
+                    backgroundColor: "#2A2B2C",
+                    color: "white",
+                    height: "43px",
+                    marginLeft: "10px",
+                    fontSize: "14px",
+                    width: "92px",
+                    textTransform: "none",
+                    fontFamily: "Helvetica Neue, sans-serif",
+                    fontWeight: 500,
+                    "&:hover": {
+                      backgroundColor: "#2A2B2C",
+                      color: "white",
+                    },
+                  }}
+                >
+                  Sign Up
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
         </Grid>
 
         <Grid item xs={6} sm={4} md>
@@ -547,6 +557,10 @@ const FooterComponent = () => {
                 fontFamily: "Helvetica Neue, sans-serif",
                 fontWeight: 500,
                 marginTop: "10px",
+                "&:hover": {
+                  backgroundColor: "#2A2B2C",
+                  color: "white",
+                },
               }}
             >
               Submit
