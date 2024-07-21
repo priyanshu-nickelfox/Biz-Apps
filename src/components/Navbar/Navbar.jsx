@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import logo from "../../assets/logo.svg";
 import { styled } from "@mui/system";
 
-const pages = ["Home","AboutUs","BizStack", "BizOs", "BizGear"];
+const pages = ["Home","BizStack", "BizOs", "BizGear","AboutUs"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
