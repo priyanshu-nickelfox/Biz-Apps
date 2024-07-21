@@ -11,9 +11,8 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../../assets/logo.svg";
 import { styled } from "@mui/system";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-const pages = ["BizStack", "BizOs", "BizGear", "Blog", "Community"];
+const pages = ["Home","About","BizStack", "BizOs", "BizGear"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -120,7 +119,7 @@ function Navbar() {
           >
             <Iphone sx={{ display: { xs: "none", md: "flex" } }}>
               <Notch>
-                {pages.map((page, index) => (
+                {pages.map((page) => (
                   <Button
                     key={page}
                     onClick={handleCloseNavMenu}
@@ -136,9 +135,7 @@ function Navbar() {
                     }}
                   >
                     {page}
-                    {index === pages.length - 1 && (
-                      <KeyboardArrowDownIcon sx={{ marginLeft: "8px" }} />
-                    )}
+                    
                   </Button>
                 ))}
               </Notch>
