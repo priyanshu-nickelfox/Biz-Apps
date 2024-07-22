@@ -135,7 +135,43 @@ const FooterComponent = () => {
     return Object.keys(tempErrors).length === 0;
   };
 
+  const handleSubscriptionEmailChange = (e) => {
+    const { value } = e.target;
+    setSubscriptionEmail(value);
+
+    if (!value) {
+      setSubscriptionEmailError("Email is required");
+    } else if (!validateEmail(value)) {
+      setSubscriptionEmailError("Invalid email format");
+    } else {
+      setSubscriptionEmailError("");
+    }
+  };
+
+  const handleSubscribe = () => {
+    const emailIsValid = validateEmail(subscriptionEmail);
+
+    if (!subscriptionEmail) {
+      setSubscriptionEmailError("Email is required");
+      return;
+    }
+
+    if (!emailIsValid) {
+      setSubscriptionEmailError("Invalid email format");
+      return;
+    }
+
+    setSubscriptionEmailError("");
+  };
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const [emailError, setEmailError] = useState("");
+  const [subscriptionEmail, setSubscriptionEmail] = useState("");
+  const [subscriptionEmailError, setSubscriptionEmailError] = useState("");
 
   return (
     <Grid
@@ -194,22 +230,12 @@ const FooterComponent = () => {
             >
               <Grid item xs md={7.5}>
                 <TextField
-                  name="email"
                   variant="outlined"
                   placeholder="Your Email Here"
-                  type="email"
-                  required
-                  error={Boolean(emailError)}
-                  helperText={emailError}
-                  onChange={(e) => {
-                    const email = e.target.value;
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                      setEmailError("Please enter a valid email address.");
-                    } else {
-                      setEmailError("");
-                    }
-                  }}
+                  value={subscriptionEmail}
+                  onChange={handleSubscriptionEmailChange}
+                  error={!!subscriptionEmailError}
+                  helperText={subscriptionEmailError}
                   sx={{
                     width: "100%",
                     height: "43px",
@@ -217,7 +243,6 @@ const FooterComponent = () => {
                     borderRadius: 1,
                     "& .MuiOutlinedInput-root": {
                       height: "100%",
-
                       "& fieldset": {
                         borderColor: "transparent",
                       },
@@ -230,16 +255,10 @@ const FooterComponent = () => {
                       "& input::placeholder": {
                         color: "#FFFFFF",
                         fontWeight: 500,
-                        fontFamily: "Helvetica Neue, sans-serif",
                       },
                       "& input": {
                         color: "#fff",
                         fontWeight: 300,
-                      },
-                      "& input:-webkit-autofill": {
-                        WebkitBoxShadow: "0 0 0 1000px #2A2B2C inset",
-                        WebkitTextFillColor: "#fff",
-                        borderRadius: "4px",
                       },
                     },
                     "@media(max-width: 475px)": {
@@ -256,21 +275,24 @@ const FooterComponent = () => {
               </Grid>
               <Grid item xs="auto">
                 <Button
+                  onClick={handleSubscribe}
                   type="submit"
+                  variant="contained"
                   sx={{
                     backgroundColor: "#2A2B2C",
                     color: "white",
                     height: "43px",
-                    marginLeft: "10px",
                     fontSize: "14px",
                     width: "92px",
                     textTransform: "none",
                     fontFamily: "Helvetica Neue, sans-serif",
                     fontWeight: 500,
+                    // marginTop: "10px",
                     "&:hover": {
                       backgroundColor: "#2A2B2C",
                       color: "white",
                     },
+                    marginLeft: "12px",
                   }}
                 >
                   Sign Up

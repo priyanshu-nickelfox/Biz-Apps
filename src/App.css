@@ -56,3 +56,7 @@
   padding: 0px !important;
 
 } */
+
+.MuiContainer-root {
+  padding-left: 0 !important;
+}

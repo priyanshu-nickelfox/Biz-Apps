@@ -34,8 +34,7 @@ function Navbar() {
   }));
 
   const Notch = styled(Box)(({ theme }) => ({
-    width: "673px",
-    marginLeft: "3rem",
+    width: "573px !important",
     backgroundColor: "#161718",
     borderRadius: "0 0 28px 28px",
     transform: "translateX(-0%)",
